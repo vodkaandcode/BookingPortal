@@ -11,12 +11,15 @@ namespace BookinigPortal.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class News
     {
         public System.Guid ID { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
+
+        [Display(Name = "Release Date")]
         public System.DateTime ReleaseDate { get; set; }
         public int Status { get; set; }
         public Nullable<System.DateTime> ExpiryDate { get; set; }

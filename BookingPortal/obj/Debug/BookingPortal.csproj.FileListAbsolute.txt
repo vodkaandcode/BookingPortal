@@ -1,0 +1,8 @@
+C:\GitRepository\BookingPortal\BookingPortal\bin\BookinigPortal.dll
+C:\GitRepository\BookingPortal\BookingPortal\bin\BookinigPortal.pdb
+C:\GitRepository\BookingPortal\BookingPortal\bin\EntityFramework.dll
+C:\GitRepository\BookingPortal\BookingPortal\bin\EntityFramework.xml
+C:\GitRepository\BookingPortal\BookingPortal\obj\Debug\ResolveAssemblyReference.cache
+C:\GitRepository\BookingPortal\BookingPortal\obj\Debug\BookinigPortal.dll.licenses
+C:\GitRepository\BookingPortal\BookingPortal\obj\Debug\BookinigPortal.dll
+C:\GitRepository\BookingPortal\BookingPortal\obj\Debug\BookinigPortal.pdb

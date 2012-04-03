@@ -70,6 +70,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Views\HtmlHelperExtensions.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\BookingModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -95,6 +96,55 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\arrowdown.gif" />
+    <Content Include="Content\images\arrowleft.gif" />
+    <Content Include="Content\images\arrowright.gif" />
+    <Content Include="Content\images\arrowup.gif" />
+    <Content Include="Content\images\bl.gif" />
+    <Content Include="Content\images\bl.png" />
+    <Content Include="Content\images\br.gif" />
+    <Content Include="Content\images\br.png" />
+    <Content Include="Content\images\darrowdown.gif" />
+    <Content Include="Content\images\darrowleft.gif" />
+    <Content Include="Content\images\darrowright.gif" />
+    <Content Include="Content\images\darrowup.gif" />
+    <Content Include="Content\images\down.gif" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\images\graduated_back.png" />
+    <Content Include="Content\images\itunes.png" />
+    <Content Include="Content\images\nav_active.png" />
+    <Content Include="Content\images\paper_01.png" />
+    <Content Include="Content\images\rarrowdown.gif" />
+    <Content Include="Content\images\rarrowleft.gif" />
+    <Content Include="Content\images\rarrowright.gif" />
+    <Content Include="Content\images\rarrowup.gif" />
+    <Content Include="Content\images\tick.png" />
+    <Content Include="Content\images\tick24.png" />
+    <Content Include="Content\images\tick32.png" />
+    <Content Include="Content\images\tl.gif" />
+    <Content Include="Content\images\tl.png" />
+    <Content Include="Content\images\tr.gif" />
+    <Content Include="Content\images\tr.png" />
+    <Content Include="Content\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\images\up.gif" />
+    <Content Include="Content\images\wait.gif" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -124,6 +174,8 @@
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Global.asax" />
     <Content Include="Models\BookingModel.edmx.sql" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.5.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.5.1.js" />
     <Content Include="Scripts\jquery-1.5.1.min.js" />
@@ -196,6 +248,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Content\images\Thumbs.db" />
     <None Include="Models\BookingModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BookingModel.Context.cs</LastGenOutput>
