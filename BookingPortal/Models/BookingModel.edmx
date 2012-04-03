@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BookingModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="BookingModelStoreContainer">
+          <EntitySet Name="Customer" EntityType="BookingModel.Store.Customer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="News" EntityType="BookingModel.Store.News" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="52" />
+          <Property Name="MyobCardId" Type="nvarchar" Nullable="false" MaxLength="15" />
+          <Property Name="Street" Type="nvarchar" MaxLength="255" />
+          <Property Name="City" Type="nvarchar" MaxLength="255" />
+          <Property Name="State" Type="nvarchar" MaxLength="255" />
+          <Property Name="Postcode" Type="nvarchar" MaxLength="10" />
+          <Property Name="Country" Type="nvarchar" MaxLength="255" />
+          <Property Name="Phone1" Type="nvarchar" MaxLength="21" />
+          <Property Name="Phone2" Type="nvarchar" MaxLength="21" />
+          <Property Name="PhoneMobile" Type="nvarchar" MaxLength="21" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="21" />
+          <Property Name="Email" Type="nvarchar" MaxLength="255" />
+          <Property Name="Website" Type="nvarchar" MaxLength="255" />
+          <Property Name="ContactName" Type="nvarchar" MaxLength="25" />
+          <Property Name="InActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastExportedToMyob" Type="datetime" />
+          <Property Name="Timestamp" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+          <Property Name="FullAddress" Type="nvarchar" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="1024" />
+          <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ReleaseDate" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="ExpiryDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="BookingModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="BookingModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="News" EntityType="BookingModel.News" />
+          <EntitySet Name="Customers" EntityType="BookingModel.Customer" />
+        </EntityContainer>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Guid" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="1024" />
+          <Property Type="String" Name="Content" Nullable="false" MaxLength="Max" />
+          <Property Type="DateTime" Name="ReleaseDate" Nullable="false" />
+          <Property Type="Int32" Name="Status" Nullable="false" >
+            <Documentation>
+              <Summary>0-Draft;1-Released;2-Inactive</Summary>
+            </Documentation>
+          </Property>
+          <Property Type="DateTime" Name="ExpiryDate" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="52" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MyobCardId" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Street" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="City" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="State" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Postcode" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Country" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Phone1" MaxLength="21" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Phone2" MaxLength="21" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PhoneMobile" MaxLength="21" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Fax" MaxLength="21" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Website" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ContactName" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="InActive" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="DateTime" Name="ModifiedDate" Nullable="false" />
+          <Property Type="DateTime" Name="LastExportedToMyob" />
+          <Property Type="Binary" Name="Timestamp" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Type="String" Name="FullAddress" MaxLength="4000" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BookingModelStoreContainer" CdmEntityContainer="BookingModelContainer">
+    <EntitySetMapping Name="News">
+      <EntityTypeMapping TypeName="IsTypeOf(BookingModel.News)">
+        <MappingFragment StoreEntitySet="News">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="ReleaseDate" ColumnName="ReleaseDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="BookingModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="FullAddress" ColumnName="FullAddress" />
+                <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+                <ScalarProperty Name="LastExportedToMyob" ColumnName="LastExportedToMyob" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="InActive" ColumnName="InActive" />
+                <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="PhoneMobile" ColumnName="PhoneMobile" />
+                <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+                <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="MyobCardId" ColumnName="MyobCardId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="BookingModel" >
+        <EntityTypeShape EntityType="BookingModel.News" Width="1.5" PointX="0.625" PointY="0.5" Height="2.3648893229166665" />
+        <EntityTypeShape EntityType="BookingModel.Customer" Width="1.5" PointX="2.5" PointY="0.5" Height="5.057109375" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

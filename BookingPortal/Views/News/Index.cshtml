@@ -1,0 +1,50 @@
+﻿@model IEnumerable<BookinigPortal.Models.News>
+
+@{
+    ViewBag.Title = "Clifford Wallace News";
+}
+
+<h2>Clifford Wallace News</h2>
+
+<p>
+    @Html.ActionLink("Go to Admin", "Admin")
+</p>
+<table>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @String.Format("{0:dd-MMM-yyyy}", item.ReleaseDate)
+        </td>
+        <td>
+            <a href="#" onclick="showNewsDetail('@item.ID');">@item.Title</a>
+            @*
+            @Html.ActionLink(item.Title, "Details", new { id = item.ID })
+            *@
+        </td>
+    </tr>
+}
+
+</table>
+<div id="newsDialog" title="News Detail" style="display:none;"></div>
+
+<script type="text/javascript">
+    function showNewsDetail(pID) {
+        $('#newsDialog').dialog({
+            width: 800,
+            resizable: false,
+            title: 'News Detail',
+            modal: true,
+            open: function(event, ui) {
+                $(this).load('@Url.Action("DetailsDialog")/'+pID);
+            },
+            buttons: {
+                "Close": function () {
+                    $(this).dialog("close");
+                }
+            }
+        });
+
+        return false;
+    }
+</script>

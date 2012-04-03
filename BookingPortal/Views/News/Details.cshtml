@@ -1,0 +1,18 @@
+﻿@model BookinigPortal.Models.News
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@Html.DisplayFor(model => model.Title)</h2>
+
+<div class="display-field">@String.Format("{0:dd-MMM-yyyy}", Model.ReleaseDate)</div>
+<div class="display-field">@Html.DisplayFor(model => model.CreatedBy)</div>
+<fieldset>
+    <div class="display-field">
+        @Html.Raw(Model.Content)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
